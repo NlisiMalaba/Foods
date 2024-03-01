@@ -1,6 +1,5 @@
 let products = [];
 
-// Fetch data from JSON file
 fetch('foods.json')
     .then(response => response.json())
     .then(data => {
@@ -27,7 +26,9 @@ function displayProducts() {
 
 function openModal(){
     const modal = document.getElementById('tableModal');
+    const modal1 = document.getElementById('createModal');
     modal.style.display = 'block';
+    modal1.style.display = 'none';
 }
 
 function closeModal(){
@@ -37,7 +38,9 @@ function closeModal(){
 
 function openCreateModal(){
     const modal = document.getElementById('createModal');
+    const modal1 = document.getElementById('tableModal');
     modal.style.display = 'block';
+    modal1.style.display = 'none'
 }
 
 function closeCreateModal(){
@@ -51,9 +54,6 @@ window.onclick = function(event) {
     }
   };
 
-function createModal(){
-    document.getElementById(`createModal`);
-}
 
 function addProduct() {
     const name = document.getElementById('name').value;
@@ -80,18 +80,13 @@ function addProduct() {
 
 function editProduct(id) {
     const product = products.find(product => product.id === id);
-
-        // Populate the form fields with the product data
         document.getElementById('name').value = product.name;
-        document.getElementById('tags').value = product.tags.join(','); // Convert tags array to string
+        document.getElementById('tags').value = product.tags.join(','); 
         document.getElementById('productId').value = id;
 }
 
 function deleteProduct(id) {
-    // Remove the product from the array
     products = products.filter(product => product.id !== id);
-
-    // Display the updated list
     displayProducts();
 }
 

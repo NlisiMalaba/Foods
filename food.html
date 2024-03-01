@@ -15,7 +15,6 @@
 
 
     <!-- Table Modal -->
-   
     <div id="tableModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -44,7 +43,6 @@
             <input type="text" id="name" required>
 
             <label for="nutrition">Nutrition per 100g:</label>
-            <!-- Add input fields for nutrition properties -->
 
             <label for="tags">Tags:</label>
             <input type="text" id="tags" placeholder="Comma-separated tags">
@@ -55,9 +53,9 @@
     </div>
 
     <!-- Edit Modal -->
-    <!-- <div id="editProductModal" class="modal">
+    <div id="editProductModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('editProductModal')">&times;</span>
+            <span class="close" onclick="closeEditModal('editProductModal')">&times;</span>
             <form id="productForm">
                 <label for="name">Name:</label>
                 <input type="text" id="name" required>
@@ -70,7 +68,7 @@
                 <button type="button" onclick="addProduct()">Add Product</button>
             </form>
         </div>
-    </div> -->
+    </div>
 
     <script src="food.js"></script>
 
