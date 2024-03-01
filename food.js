@@ -23,12 +23,36 @@ function displayProducts() {
     });
 }
 
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'block';
+
+
+function openModal(){
+    const modal = document.getElementById('tableModal');
+    modal.style.display = 'block';
 }
 
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
+function closeModal(){
+    const modal = document.getElementById('tableModal');
+    modal.style.display = 'none';
+}
+
+function openCreateModal(){
+    const modal = document.getElementById('createModal');
+    modal.style.display = 'block';
+}
+
+function closeCreateModal(){
+    const modal = document.getElementById('createModal');
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  };
+
+function createModal(){
+    document.getElementById(`createModal`);
 }
 
 function addProduct() {

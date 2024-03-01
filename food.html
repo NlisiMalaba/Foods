@@ -1,68 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD with Vanilla JS</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <button type="button" onclick="openModal()">Table</button>
+    <button type="button" onclick="openCreateModal()">Add Product</button>
 
 
-<!-- Table Modal -->
-<h1>Product List</h1>
-<div id="tableModal" class="modal">
-    <table id="productTable">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-    </table>    
-</div>
+    <!-- Table Modal -->
+   
+    <div id="tableModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1>Product List</h1>
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>      
+    </div>
 
 
 
-<!-- Create Modal -->
-<div id="createModal" class="modal">
-    <form id="productForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" required>
-    
-        <label for="nutrition">Nutrition per 100g:</label>
-        <!-- Add input fields for nutrition properties -->
-    
-        <label for="tags">Tags:</label>
-        <input type="text" id="tags" placeholder="Comma-separated tags">
-    
-        <button type="button" onclick="addProduct()">Add Product</button>
-    </form>
-</div>
-
-<!-- Edit Modal -->
-<div id="editProductModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('editProductModal')">&times;</span>
+    <!-- Create Modal -->
+    <div id="createModal" class="modal">
+       <div class="modal-content">
+        <span class="close" onclick="closeCreateModal()">&times;</span>
         <form id="productForm">
             <label for="name">Name:</label>
             <input type="text" id="name" required>
-        
+
             <label for="nutrition">Nutrition per 100g:</label>
             <!-- Add input fields for nutrition properties -->
-        
+
             <label for="tags">Tags:</label>
             <input type="text" id="tags" placeholder="Comma-separated tags">
-        
+
             <button type="button" onclick="addProduct()">Add Product</button>
         </form>
+       </div>
     </div>
-</div>
 
-<script src="food.js"></script>
+    <!-- Edit Modal -->
+    <!-- <div id="editProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editProductModal')">&times;</span>
+            <form id="productForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="nutrition">Nutrition per 100g:</label>
+               
+                <label for="tags">Tags:</label>
+                <input type="text" id="tags" placeholder="Comma-separated tags">
+
+                <button type="button" onclick="addProduct()">Add Product</button>
+            </form>
+        </div>
+    </div> -->
+
+    <script src="food.js"></script>
 
 </body>
+
 </html>
